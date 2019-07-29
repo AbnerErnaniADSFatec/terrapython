@@ -16,8 +16,8 @@ else: dic[2] = 28
 geocodigo = get_value("geocodigo")
 nome_municipio = get_value("nome1")
 uf = get_value("uf")
-maxima = grid.zonal.max("monthly", 0)
-media = grid.zonal.mean("monthly", 0)
+# maxima = grid.zonal.max("monthly", 0)
+# media = grid.zonal.mean("monthly", 0)
 mes = meses[an_mes]
 ano = get_analysis_date().year
 
@@ -25,8 +25,8 @@ if dic[an_mes] == get_analysis_date().day:
     add_value("geocodigo", geocodigo)
     add_value("nome_municipio", nome_municipio)
     add_value("uf", uf)
-    add_value("maxima", maxima)
-    add_value("media", media)
+    add_value("maxima", grid.zonal.max("monthly", 0))
+    add_value("media", grid.zonal.mean("monthly", 0))
     add_value("mes", mes)
     add_value("ano", ano)
 else:
