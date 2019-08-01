@@ -17,7 +17,7 @@ maxima = grid.zonal.max("monthly", 0)
 media = grid.zonal.mean("monthly", 0)
 mes = meses[an_mes]
 
-if dias[an_mes] == get_analysis_date().day:
+if int(dias[an_mes]) == int(get_analysis_date().day):
     add_value("maxima", maxima)
     add_value("media", media)
     add_value("mes", mes)

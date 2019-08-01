@@ -13,7 +13,7 @@ else: bissexto = False
 if bissexto: dias[2] = 29
 else: dias[2] = 28
 
-if dias[mes] == get_analysis_date().day:
+if int(dias[mes]) == int(get_analysis_date().day):
     media = grid.history.mean("daily", (str(dias[mes]) + "d"), 0)
     if math.isnan(media): media = 0
     return media
